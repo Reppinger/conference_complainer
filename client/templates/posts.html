@@ -1,0 +1,22 @@
+<template name="posts">
+    <div class="container-fluid col-xs-12">
+        {{#if posts.count}}
+            {{#each posts}}
+                {{> post}}
+            {{/each}}
+        {{else}}
+            <h1>These will be posts.</h1>
+        {{/if}}
+    </div>
+</template>
+
+<template name="post">
+    <div class="col-xs-12 row">
+        <h3>{{content}}</h3>
+        <h2>{{formatDate created}}</h2>
+        <h5>Votes: {{votes}}</h5>
+        <button class="btn btn-success upvote" id="{{_id}}">Upvote</button>
+        <button class="btn btn-warning downvote" id="{{_id}}">Downvote</button>
+        <hr/>
+    </div>
+</template>
